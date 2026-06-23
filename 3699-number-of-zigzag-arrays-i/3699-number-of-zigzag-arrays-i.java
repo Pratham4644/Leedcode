@@ -52,12 +52,6 @@ class Solution {
             dp = nextDp;
         }
         
-        // Sum up all valid arrays of length n. 
-        // Note: For length n, it doesn't matter what the *next* required direction would be,
-        // but we must count each unique array exactly once. 
-        // To avoid double-counting arrays of length n >= 2:
-        // An array ending with an UP move satisfies the condition and is stored in dp[0][y].
-        // An array ending with a DOWN move satisfies the condition and is stored in dp[1][y].
         long totalCount = 0;
         for (int x = 0; x < m; x++) {
             totalCount = (totalCount + dp[0][x] + dp[1][x]) % MOD;
